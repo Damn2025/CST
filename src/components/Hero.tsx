@@ -4,6 +4,7 @@ import Navigation from './Navigation';
 import CSTvideo from '../assets/CSTvideo.mp4';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Backvideo from '../assets/Hvac.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,27 +39,35 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#274F71] to-gray-900 z-0"></div>
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-10"
+        src={Backvideo}
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#274F71]/100 to-gray-900/90  z-0"></div>
       <Navigation onContactClick={onContactClick} />
-      <div className="px-10 w-full mx-auto relative z-10 pt-24 pb-12 lg:pt-0 lg:pb-0" ref={heroRef}>
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="hero-content-left w-full lg:w-1/2 text-center lg:text-left">
-            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight uppercase">
-               Engineering Solutions
-              {/* <span className="block text-blue-300">Redefined</span> */}
+      <div className="px-15 w-full mx-auto relative z-10 pt-24 pb-12  lg:pt-0   lg:pb-0" ref={heroRef}>
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          <div className="hero-content-left w-full lg:w-1/2 text-center lg:text-center">
+            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight uppercase">
+               Heat Transfer and Thermal Analysis Software
+  
             </h1>
-             <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-blue-300 mb-6 leading-tight uppercase">
-               Sustaining the Earth
+             {/* <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold text-blue-300 mb-6 leading-tight uppercase">
+                Thermal Analysis Software */}
               {/* <span className="block text-blue-300">Redefined</span> */}
-            </h1>
+            {/* </h1> */}
           
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg sm:text-xl text-center text-gray-300 mb-8 max-w-2xl mx-auto  leading-relaxed">
               Advanced software solutions for environmental monitoring, compliance, and sustainability. 
               Transform your data into actionable insights with CST Envirotech.
             </p>
           
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center ">
               <button
                 onClick={onContactClick}
                 className="group bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2"
@@ -86,7 +95,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               </div>
             </div>
           </div>
-          <div className="hero-video-right w-full lg:w-1/2 mt-12 lg:mt-0 relative lg:h-[500px] flex items-center justify-center">
+          {/* <div className="hero-video-right w-full lg:w-1/2 mt-12 lg:mt-0 relative lg:h-[500px] flex items-center justify-center">
             <video
               autoPlay
               loop
@@ -94,7 +103,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               className="rounded-2xl shadow-2xl w-full h-full object-cover"
               src={CSTvideo}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
