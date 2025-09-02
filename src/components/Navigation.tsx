@@ -42,7 +42,7 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-24 mt-12'}`} />
-            <div className={`flex flex-col items-left justify-center mt-10 ${isScrolled ? 'mt-0' : 'mt-10'}`}>
+            <div className={`flex flex-col items-left justify-center  ${isScrolled ? 'mt-0' : 'mt-10'}`}>
             <h2 className={` text-left font-bold transition-colors duration-300  ${isScrolled ? 'text-black-600 text-xl' : 'text-white text-3xl'}`}>
               THERMO
             </h2>
