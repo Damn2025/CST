@@ -53,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       <div className="w-full mx-auto relative z-10  pt-2 pb-10 md:pt-24 md:pb-12 lg:pt-0 lg:pb-0 sm:mt-10 " ref={heroRef}>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12">
           <div className="hero-content-left w-full lg:w-1/2 text-center lg:text-center">
-            <div className="inline-flex items-center gap-2 text-sm border border-white/50 text-white/90 rounded-full px-4 py-1 mb-4 backdrop-blur-sm  text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base">
+            <div className=" animate-float inline-flex items-center gap-2 text-sm border border-white/50 text-white/90 rounded-full px-4 py-1 mb-4 backdrop-blur-sm  text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base">
               <Sparkles className="w-4 h-4 text-blue-300" />
               The Leading AI-Powered
             </div>
