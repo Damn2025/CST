@@ -42,12 +42,13 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-24 mt-12'}`} />
-            <div className="flex flex-col items-left justify-center">
-            <h2 className={`text-xl text-left font-bold transition-colors duration-300  ${isScrolled ? 'text-black-600' : 'text-white'}`}>
-              CST LABS
+            <div className={`flex flex-col items-left justify-center mt-10 ${isScrolled ? 'mt-0' : 'mt-10'}`}>
+            <h2 className={` text-left font-bold transition-colors duration-300  ${isScrolled ? 'text-black-600 text-xl' : 'text-white text-3xl'}`}>
+              THERMO
             </h2>
-            <h3 className={`text-sm font-bold ${isScrolled ? 'text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-orange-500 to-blue-500' : 'text-white'}`}>
-              ThermoSoft
+            <div className={`border ${isScrolled ? 'border-black' : 'border-white' }`}></div>
+            <h3 className={` font-extrabold ${isScrolled ? 'text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-xl' : ' text-3xl text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500'}`}>
+              SOFTWARE
             </h3>
             </div>
            
