@@ -29,8 +29,9 @@ function App() {
       <Features />
       <Industries />
       <CustomerTrust />
-      <Footer onContactClick={openContactModal} />
       <FAQs />
+      <Footer onContactClick={openContactModal} />
+    
       
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
