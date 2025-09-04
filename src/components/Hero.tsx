@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, ShieldCheck, Headset, Globe, Sparkles } from 'lucide-react';
 import Navigation from './Navigation';
-import CSTvideo from '../assets/CSTvideo.mp4';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 import Backvideo from '../assets/Hvac.mp4';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,24 +14,30 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        defaults: { ease: 'power3.out', duration: 1.2 }
-      });
+      if (h1Ref.current) {
+        // Split the text into individual characters
+        const split = new SplitType(h1Ref.current, { types: 'chars' });
+        const chars = split.chars;
 
-      tl.from('.hero-content-left', {
-        xPercent: -50,
-        scrub: true,
-        opacity: 0,
-        delay: 0.3
-      })
-      .from('.hero-video-right', {
-        xPercent: 50,
-        scrub: true,
-        opacity: 0,
-      }, '<'); // Starts at the same time as the previous animation
+        // Set initial state (all characters invisible)
+        gsap.set(chars, { opacity: 0 });
+
+        // Create the looping animation
+        gsap.to(chars, {
+          opacity: 1,
+          stagger: 0.05, // Time between each character appearing
+          duration: 0.1,
+          ease: 'none',
+          repeat: -1, // Loop indefinitely
+          repeatDelay: 0.5, // Wait 2 seconds before repeating
+        });
+      }
+
+      // You can add other non-looping animations here if needed
 
     }, heroRef);
 
@@ -58,7 +64,9 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               The Leading AI-Powered
             </div>
             <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight uppercase">
-              Heat Transfer and Thermal Analysis Software
+              Heat Transfer and Thermal Analysis  
+            <span ref={h1Ref} className='ml-10 text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold  mb-4 md:mb-5 leading-tight uppercase text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base'>AI-Powered</span>
+            SOFTWARE
             </h1>
             <p className="text-base xs:text-lg sm:text-xl text-center text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
               Advanced software solutions for environmental monitoring, compliance, and sustainability. 
@@ -91,15 +99,6 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               </div>
             </div>
           </div>
-          {/* <div className="hero-video-right w-full lg:w-1/2 mt-12 lg:mt-0 relative lg:h-[500px] flex items-center justify-center">
-            <video
-              autoPlay
-              loop
-              muted
-              className="rounded-2xl shadow-2xl w-full h-full object-cover"
-              src={CSTvideo}
-            />
-          </div> */}
         </div>
       </div>
     </section>

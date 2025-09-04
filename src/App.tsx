@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import Industries from './components/Industries';
 import CustomerTrust from './components/CustomerTrust';
+import FAQs from './components/FAQs';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import BackgroundAnimation from './components/BackgroundAnimation';
@@ -29,6 +30,7 @@ function App() {
       <Industries />
       <CustomerTrust />
       <Footer onContactClick={openContactModal} />
+      <FAQs />
       
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
