@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import './animations.css';
+import Associates from './components/Associates';
 
 function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -28,6 +29,7 @@ function App() {
       <HowItWorks />
       <Features />
       <Industries />
+      <Associates/>
       <CustomerTrust />
       <FAQs />
       <Footer onContactClick={openContactModal} />
