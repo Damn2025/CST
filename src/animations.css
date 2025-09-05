@@ -102,6 +102,14 @@
   animation: wave 20s linear infinite;
 }
 
+.interA{
+  font-family: 'InterA', sans-serif;
+}
+
+.interB{
+  font-family: 'InterB';
+}
+
 @keyframes wave {
   0% {
     background-position: 0 0;

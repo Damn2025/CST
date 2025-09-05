@@ -31,8 +31,6 @@ function App() {
       <CustomerTrust />
       <FAQs />
       <Footer onContactClick={openContactModal} />
-    
-      
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
     </div>
   );

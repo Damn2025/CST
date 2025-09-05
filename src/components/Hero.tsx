@@ -56,23 +56,24 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#274F71]/100 to-gray-900/90 z-0"></div>
       <Navigation onContactClick={onContactClick} />
-      <div className="w-full mx-auto relative z-10  pt-2 pb-10 md:pt-24 md:pb-12 lg:pt-0 lg:pb-0 sm:mt-10 " ref={heroRef}>
+      <div className="w-full mx-auto relative z-10 pt-20 pb-10 md:pt-24 md:pb-12 lg:pt-0 lg:pb-0" ref={heroRef}>
         <div className="flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12">
-          <div className="hero-content-left w-full lg:w-1/2 text-center lg:text-center">
+          <div className="hero-content-left w-full text-center">
             <div className=" animate-float inline-flex items-center gap-2 text-sm border border-white/50 text-white/90 rounded-full px-4 py-1 mb-4 backdrop-blur-sm  text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base">
               <Sparkles className="w-4 h-4 text-blue-300" />
               The Leading AI-Powered
             </div>
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight uppercase">
-              Heat Transfer and Thermal Analysis  
-            <span ref={h1Ref} className='ml-10 text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold  mb-4 md:mb-5 leading-tight uppercase text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base'>AI-Powered</span>
-            SOFTWARE
+            <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight uppercase">
+              Heat Transfer and <br className="sm:hidden" /> Thermal Analysis
+              <br />
+              <span ref={h1Ref} className='font-Inter text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight uppercase text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500'>AI-Powered</span>
+              <span> SOFTWARE</span>
             </h1>
-            <p className="text-base xs:text-lg sm:text-xl text-center text-gray-300 mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base xs:text-lg sm:text-xl text-center text-gray-300 mb-6 md:mb-8 max-w-3xl mx-auto leading-relaxed">
               Advanced software solutions for environmental monitoring, compliance, and sustainability. 
               Transform your data into actionable insights with CST Envirotech.
             </p>
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 items-center justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
               <button
                 onClick={onContactClick}
                 className="group bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2"
@@ -81,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </div>
-            <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-md mx-auto lg:max-w-none lg:mx-0">
+            <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-md mx-auto sm:max-w-3xl lg:max-w-4xl">
               <div className="text-center animate-float p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white shadow-lg">
                 <Globe className="w-8 h-8 mx-auto mb-2 text-white font-bold" />
                 <div className="text-xl md:text-3xl font-bold text-white mb-2">Sustainability</div>

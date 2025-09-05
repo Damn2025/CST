@@ -40,12 +40,16 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-28'}`}>
           {/* Logo */}
-          <div className="flex items-center gap-2 sm:gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-10 sm:h-12 md:h-16' : 'h-14 sm:h-16 md:h-24 mt-6 sm:mt-12'}`} />
-            <div className={`flex flex-col items-left justify-center ${isScrolled ? 'mt-0' : 'mt-4 sm:mt-10'}`}>
-              <h2 className={`text-left font-semibold transition-colors duration-300 text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base ${isScrolled ? 'text-black-600 text-base sm:text-xl' : ' text-xl sm:text-3xl'}`}>THERMO</h2>
-              <div className={`border ${isScrolled ? 'border-black' : 'border-white'}`}></div>
-              <h3 className={`font-extrabold ${isScrolled ? 'text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base sm:text-xl' : 'text-xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500'}`}>SOFTWARE</h3>
+          <div className="flex items-center gap-2 sm:gap-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'}`} />
+            <div className="flex flex-col items-start justify-center">
+              <div>
+                <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl sm:text-3xl'}`}>
+                  <span className="font-extrabold">T</span>HERMO<span className="font-extrabold italic">Soft</span>
+                </span>
+             </div>
+              <div className={`border w-[70%] ${isScrolled ? 'border-blue-500' : 'border-white'}`}></div>
+              <h3 className={`font-cursive font-bold transition-colors duration-300 ${isScrolled ? 'text-black text-xl sm:text-2xl' : 'text-white text-2xl sm:text-3xl'}`}>Heat Transfer Software</h3>
             </div>
           </div>
 
@@ -82,13 +86,14 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
 
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
-          <div className={`fixed inset-0 z-40 flex md:hidden bg-black/70 backdrop-blur-sm transition-all duration-300`}>
-            <div className={`w-4/5 max-w-xs bg-white/95 shadow-lg h-full p-6 flex flex-col gap-2 border-r border-gray-200 animate-slide-in-left`}>
+          <div className="fixed inset-0 z-40 flex md:hidden" onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-300"></div>
+            <div className="relative w-4/5 max-w-xs bg-white h-full p-6 flex flex-col gap-2 shadow-lg animate-slide-in-left" onClick={(e) => e.stopPropagation()}>
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 text-base font-medium ${isScrolled ? 'text-gray-700 hover:text-[#274F71] hover:bg-gray-50' : 'text-[#274F71] hover:bg-gray-100'}`}
+                  className="block w-full text-left px-3 py-2 rounded-lg transition-colors duration-200 text-lg font-medium text-gray-700 hover:text-[#274F71] hover:bg-gray-100"
                 >
                   {item.label}
                 </button>
@@ -98,12 +103,11 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
                   onContactClick();
                   setIsMobileMenuOpen(false);
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-lg font-semibold transition-colors duration-200 mt-2 bg-[#274F71] text-white hover:bg-[#1e3a56]`}
+                className="block w-full text-left px-3 py-2 rounded-lg font-semibold transition-colors duration-200 mt-4 bg-[#274F71] text-white hover:bg-[#1e3a56]"
               >
                 Contact Us
               </button>
             </div>
-            <div className="flex-1" onClick={() => setIsMobileMenuOpen(false)}></div>
           </div>
         )}
       </div>
