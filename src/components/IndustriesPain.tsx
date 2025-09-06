@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Pain1 from '../assets/Pains/Pain1.png'
-import { SlidersHorizontal, Users, FileText, Cpu, Puzzle, Award, Droplets, Lightbulb, Clock } from 'lucide-react';
+import { SlidersHorizontal, Users, FileText, Cpu, Puzzle, Award, Droplets, Lightbulb, Clock, ChevronDown } from 'lucide-react';
 
 const painPointsData = [
   {
@@ -78,7 +78,7 @@ const painPointsData = [
 ];
 
 const IndustriesPainSection: React.FC = () => {
-  const [activeModule, setActiveModule] = useState(0);
+  const [activeModule, setActiveModule] = useState<number | null>(0);
 
   return (
     <section className="py-20 bg-white">
@@ -91,34 +91,36 @@ const IndustriesPainSection: React.FC = () => {
             CST ThermoSoft's software solutions address several key pain points for manufacturers operating in the HVAC&R, Energy & Power, Chemical, Pharmaceutical, Food & Beverage, and Automotive sectors. 
           </p>
         </div>
-        <div className="flex flex-col lg:flex-row bg-[#111314] rounded-[35px] overflow-hidden min-h-[65vh]">
+
+        {/* Desktop Horizontal Accordion */}
+        <div className="hidden lg:flex flex-row bg-[#111314] rounded-[35px] overflow-hidden min-h-[65vh]">
           {painPointsData.map((module, index) => (
             <div
               key={module.id}
               className={`flex transition-all duration-700 ease-in-out ${
                 activeModule === index ? 'flex-[12]' : 'flex-[1] cursor-pointer'
               }`}
-              onClick={() => activeModule !== index && setActiveModule(index)}
+              onClick={() => setActiveModule(index)}
             >
               {activeModule === index ? (
                 <div
-                  className="bg-[#274F71] rounded-[35px] p-2 lg:p-10 flex-1 flex flex-col justify-center"
+                  className="bg-[#274F71] rounded-[35px] p-10 flex-1 flex flex-col justify-center"
                 >
-                    <div className="inline-flex items-center gap-3 mb-4">
-                          <div className="bg-white/20 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <module.icon className="w-6 h-6" />
-                          </div>
-                          <p className="text-sm md:text-base font-mono text-gray-300">
-                            PAIN POINT {module.number}
-                          </p>
-                       </div>
-                  <div className="flex flex-col lg:flex-row items-center gap-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="bg-white/20 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <module.icon className="w-6 h-6" />
+                    </div>
+                    <p className="text-sm md:text-base font-mono text-gray-300">
+                      PAIN POINT {module.number}
+                    </p>
+                  </div>
+                  <div className="flex flex-row items-center gap-8">
                     <div className="flex-1">
                       <h3 className="text-2xl md:text-3xl font-bold text-white my-2">
                         {module.title}
                       </h3>
                     </div>
-                    <div className="w-full lg:w-3/5 flex-none self-center">
+                    <div className="w-3/5 flex-none self-center">
                       <img
                         src={module.imageUrl}
                         alt={`Pain Point ${module.number} visual`}
@@ -126,23 +128,66 @@ const IndustriesPainSection: React.FC = () => {
                       />
                     </div>
                   </div>
-                   <p className="text-gray-200 mt-5 leading-relaxed">
-                        {module.content}
-                      </p>
+                  <p className="text-gray-200 mt-5 leading-relaxed">
+                    {module.content}
+                  </p>
                 </div>
               ) : (
                 <div
                   className={`bg-[#111314] text-white w-full h-full flex items-center justify-center
-                    ${index > activeModule ? 'border-l-2 border-[#274F71]' : 'border-r-2 border-[#274F71]'}
-                    `}
+                    ${index > (activeModule ?? 0) ? 'border-l-2 border-[#274F71]' : 'border-r-2 border-[#274F71]'}
+                  `}
                 >
-                    <span className="transform -rotate-90 whitespace-nowrap font-mono uppercase tracking-widest text-xs sm:text-sm">
-                      Pain Point {module.number}
-                    </span>
+                  <span className="transform -rotate-90 whitespace-nowrap font-mono uppercase tracking-widest text-xs sm:text-sm">
+                    Pain Point {module.number}
+                  </span>
                 </div>
               )}
             </div>
           ))}
+        </div>
+
+        {/* Mobile Vertical Accordion */}
+        <div className="lg:hidden space-y-4">
+          {painPointsData.map((item, index) => {
+            const isOpen = activeModule === index;
+            return (
+              <div key={item.id} className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden transition-all duration-300">
+                <button
+                  onClick={() => setActiveModule(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left focus:outline-none"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className={`bg-[#274F71] text-white w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'scale-110' : ''}`}>
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-base sm:text-lg font-semibold text-gray-900">{item.title}</span>
+                  </div>
+                  <ChevronDown
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-300 flex-shrink-0 ${
+                      isOpen ? 'rotate-180' : 'rotate-0'
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
+                >
+                  <div className="overflow-hidden px-6 pb-5 pt-2">
+                    <img
+                      src={item.imageUrl}
+                      alt={`Pain Point ${item.number} visual`}
+                      className="w-full h-auto rounded-lg object-cover mb-4"
+                    />
+                    <p className="text-gray-700 leading-relaxed">
+                      {item.content}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
