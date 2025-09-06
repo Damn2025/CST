@@ -5,6 +5,7 @@ import Benefits from './components/Benefits';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import Industries from './components/Industries';
+import IndustriesPainSection from './components/IndustriesPain';
 import CustomerTrust from './components/CustomerTrust';
 import FAQs from './components/FAQs';
 import Footer from './components/Footer';
@@ -24,7 +25,7 @@ function App() {
       <BackgroundAnimation />
       
       <Hero onContactClick={openContactModal} />
-      {/* <About /> */}
+      <IndustriesPainSection />
       <Benefits />
       <HowItWorks />
       <Features />

@@ -5,64 +5,64 @@ import { gsap } from 'gsap';
 // You can replace these with your actual logo imports
 
 import logo1 from '../assets/associates/Dr.jagjit.webp';
-import logo2 from '../assets/associates/Udo Ziegler.webp';
+import logo2 from '../assets/associates/Udo Ziegler.png';
 import logo3 from '../assets/associates/SukhpalSingh.webp';
 import logo4 from '../assets/associates/TapanJAin.webp';
-import logo5 from '../assets/associates/AmitJoshi.webp';
-import logo6 from '../assets/associates/JMPaul.webp';
+import logo5 from '../assets/associates/AmitJoshi.png';
+import logo6 from '../assets/associates/JMPaul.png';
 import logo7 from '../assets/associates/Pankaj.webp';
 import logo8 from '../assets/associates/Dr.jagjit.webp';
 import logo9 from '../assets/associates/JMPaul.webp';
-import logo10 from '../assets/associates/Craig.webp';
+import logo10 from '../assets/associates/Craig.png';
 
 const associates = [
   { 
     name: 'Dr. Jagjit Singh', 
     logo: logo1,
-    post: 'Director',
-    description: 'A leading expert in thermal dynamics with over 20 years of experience in academic and industrial research.'
+    post: 'Clean & Green Energy Expert',
+    description: 'With over 45 years in thermal energy, he has dedicated his career to sustainable solutions. Specialising in designing and optimising thermal systems, he has led projects reducing environmental impact while preserving air, water, and energy for a cleaner, sustainable future.'
   },
   { 
     name: 'Udo Ziegler', 
     logo: logo2,
-    post: 'Director',
-    description: 'Specializes in HVAC systems and sustainable energy solutions, driving innovation in green technology.'
+    post: 'Process & Plant Layout.',
+    description: 'Leads ZEPCON Engineering, a German firm founded in 1991, specializing in process engineering, plant layout, and manufacturing technology, with global projects in energy, biomass, food, and chemical industries..'
   },
   { 
-    name: 'Sukhpal Singh', 
+    name: 'Colonel Sukhpal Singh Khetarpal', 
     logo: logo3,
-    post: 'Director',
-    description: 'A software architect with a passion for creating scalable and efficient thermal analysis tools.'
+    post: 'Vice President – Sustainable Futures ',
+    description: 'An Indian Armed Forces veteran with 38+ years of service. With postgraduate degrees in Physics and Business Administration, he has led in academia and industry, driving ESG initiatives, GHG management, and sustainable collaborations with universities and industries.'
   },
   { 
     name: 'Tapan Jain', 
     logo: logo4,
-    post: 'Director',
-    description: 'Expert in refrigerant technology and compliance, ensuring our software meets global standards.'
+    post: 'IOT & AI Expert',
+    description: 'With 12+ years of expertise in IT, AI, and IoT, he drives scalable solutions and AI-powered automation at CST Environment, enhancing efficiency. Armed with a B.Tech from IIT Roorkee and a PGP from ISB Hyderabad, he specializes in analytics, workflow automation, and IoT implementation.'
   },
   { 
     name: 'Amit Joshi', 
     logo: logo5,
-    post: 'Director',
-    description: 'Focuses on user experience and interface design, making complex data accessible and actionable.'
+    post: ' Auditor Air, Water & Energy',
+    description: 'With a B.Tech from IIT Roorkee, Amit Joshi specializes in water conservation, having conducted 250+ audits in steel and power sectors. At CST Environment, he leads sustainable water management initiatives, advising on best practices and introducing innovative conservation technologies.'
   },
   { 
     name: 'JM Paul', 
     logo: logo6,
-    post: 'Director',
-    description: 'A key contributor to our heat exchanger simulation engines, with a deep knowledge of fluid dynamics.'
+    post: 'Project Finance Controller',
+    description: 'A seasoned professional since 1972 and head of JM Paul & Co. Chartered Accountants, supports CST EnviroBreeze with sustainable project development, cost planning, tax compliance, and financial structuring. His expertise ensures optimized resources, regulatory alignment, and long-term business success.'
   },
   { 
-    name: 'Pankaj Kumar', 
+    name: 'Pankaj R. Kalaskar', 
     logo: logo7,
-    post: 'Director',
-    description: 'Leads our quality assurance team, ensuring the reliability and accuracy of all our software products.'
+    post: 'Process Heat Exchange Expert',
+    description: ' Brings 20 years of expertise in heat transfer and engineering. With prior roles at Tranter and DESCO, he specializes in PHEs, Spiral, Block, Shell & Plate, and Pillow Plate Heat Exchangers, offering strong technical leadership and project management, also dedicated to driving innovation and efficiency in thermal solutions.'
   },
   { 
-    name: 'Craig Bradshaw', 
+    name: 'Craig Bevan', 
     logo: logo10,
-    post: 'Director',
-    description: 'Our strategic partner for the North American market, bridging technology with customer needs.'
+    post: 'The Data Center Man',
+    description: 'A Senior Data Centre Expert with 30+ years across EMEA and APAC, and a strong Middle East presence since 2008. He specialises in sustainable, scalable solutions from site selection to MEP/IT systems and full lifecycle management, championing net-zero operations and AI-driven cooling'
   },
 ];
 
@@ -131,11 +131,11 @@ const Associates: React.FC = () => {
                 <li key={index}>
                   <div className="flex-shrink-0 w-[320px] sm:w-[350px] mx-4 sm:mx-8">
                     <div className="bg-white rounded-2xl shadow-lg overflow-hidden text-center p-6 border border-gray-200/80">
-                      <img src={associate.logo} alt={associate.name} className="h-40 w-40 object-cover rounded-full mx-auto mb-4 border-4 border-gray-100" />
-                      <h3 className="text-xl font-bold text-gray-900">{associate.name}</h3>
-                       <p className="text-[#274F71] italic text-sm leading-relaxed">{associate.post}</p>
+                      <img src={associate.logo} alt={associate.name} className="h-40 w-40 object-cover rounded-full mx-auto mb-4 bg-black-100 border-4 border-gray-100" />
+                      <h3 className="text-xl font-extrabold text-gray-900">{associate.name}</h3>
+                       <p className="text-[#274F71] italic text-sm  font-semibold leading-relaxed">{associate.post}</p>
                       <div className="w-16 h-0.5 bg-[#274F71] mx-auto my-4"></div>
-                      <p className="text-gray-600 text-sm leading-relaxed">{associate.description}</p>
+                      <p className="text-gray-600 text-sm font-bold leading-relaxed">{associate.description}</p>
                     </div>
                   </div>
                 </li>
