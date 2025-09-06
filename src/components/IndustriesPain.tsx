@@ -152,16 +152,16 @@ const IndustriesPainSection: React.FC = () => {
           {painPointsData.map((item, index) => {
             const isOpen = activeModule === index;
             return (
-              <div key={item.id} className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden transition-all duration-300">
+              <div key={item.id} className={`rounded-xl border border-gray-200  shadow-sm overflow-hidden transition-all duration-300 ${isOpen?'bg-black text-white':'bg-white'}`}>
                 <button
                   onClick={() => setActiveModule(isOpen ? null : index)}
                   className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left focus:outline-none"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`bg-[#274F71] text-white w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'scale-110' : ''}`}>
+                  <div className={`flex items-center gap-4 ${isOpen?'text-white':'text-gray-900'}`}>
+                    <div className={`text-white w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'scale-110 bg-black' : 'bg-[#274F71]'}`}>
                       <item.icon className="w-5 h-5" />
                     </div>
-                    <span className="text-base sm:text-lg font-semibold text-gray-900">{item.title}</span>
+                    <span className="text-base sm:text-lg font-semibold ">{item.title}</span>
                   </div>
                   <ChevronDown
                     className={`w-5 h-5 text-gray-500 transition-transform duration-300 flex-shrink-0 ${
@@ -180,7 +180,7 @@ const IndustriesPainSection: React.FC = () => {
                       alt={`Pain Point ${item.number} visual`}
                       className="w-full h-auto rounded-lg object-cover mb-4"
                     />
-                    <p className="text-gray-700 leading-relaxed">
+                    <p className={`${isOpen?'text-white':'text-gray-700'} leading-relaxed`}>
                       {item.content}
                     </p>
                   </div>
