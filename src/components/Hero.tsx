@@ -74,13 +74,15 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               Transform your data into actionable insights with CST Envirotech.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
-              <button
-                onClick={onContactClick}
+              <a
+                href="https://cstheattrransfer.com/Default.aspx"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2"
               >
                 Get Started Today
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-              </button>
+              </a>
             </div>
             <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-md mx-auto sm:max-w-3xl lg:max-w-4xl">
               <div className="text-center animate-float p-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white shadow-lg">
