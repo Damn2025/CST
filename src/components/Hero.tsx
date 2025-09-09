@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div className="hero-content-left w-full text-center">
             <div className=" animate-float inline-flex items-center gap-2 text-sm border border-white/50 text-white/90 rounded-full px-4 py-1 mb-4 backdrop-blur-sm  text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 text-base">
               <Sparkles className="w-4 h-4 text-blue-300" />
-              The Leading AI-Powered
+              The Leading AI-Driven
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 md:mb-5 leading-tight uppercase">
               Heat Transfer and <br className="sm:hidden" /> Thermal Analysis

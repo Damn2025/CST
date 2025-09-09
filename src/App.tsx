@@ -5,7 +5,7 @@ import Benefits from './components/Benefits';
 import HowItWorks from './components/HowItWorks';
 import Features from './components/Features';
 import Industries from './components/Industries';
-import IndustriesPainSection from './components/IndustriesPain';
+import IndustriesPainSection from './components/USP';
 import CustomerTrust from './components/CustomerTrust';
 import FAQs from './components/FAQs';
 import Footer from './components/Footer';
@@ -13,6 +13,11 @@ import ContactModal from './components/ContactModal';
 import BackgroundAnimation from './components/BackgroundAnimation';
 import './animations.css';
 import Associates from './components/Associates';
+import USP from './components/USP';
+import IndustriesPain from './components/IndustriesPains';
+import SoftwareExplanation from './components/SoftwareExplanation';
+
+
 
 function App() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -25,11 +30,14 @@ function App() {
       <BackgroundAnimation />
       
       <Hero onContactClick={openContactModal} />
-      <IndustriesPainSection />
+      {/* <SoftwareExplanation /> */}
+      <IndustriesPain />
       <Benefits />
       <HowItWorks />
       <Features />
-      <Industries />
+      {/* <About/> */}
+      <Industries/>
+      <USP/>
       <Associates/>
       <CustomerTrust />
       <FAQs />
