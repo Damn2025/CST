@@ -164,7 +164,7 @@ const painPointsData = [
 
 ];
 
-const IndustriesSelection = () => {
+const IndustriesPain = () => {
   const scrollContainerRef = useRef(null);
   const [flippedCardId, setFlippedCardId] = useState<number | null>(null); // Changed state to a single ID
   const cardWidth = 320 + 24; // w-80 (sm:w-80) is 320px, space-x-6 is 24px. We'll use the larger size for scroll calculation.
@@ -318,4 +318,4 @@ const IndustriesSelection = () => {
   );
 };
 
-export default IndustriesSelection;
+export default IndustriesPain;
