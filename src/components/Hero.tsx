@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-10"
         src= {Backvideo}
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#274F71]/100 to-gray-900/90 z-0"></div>
