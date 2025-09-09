@@ -39,7 +39,7 @@ function App() {
       <Industries/>
       <USP/>
       <Associates/>
-      <CustomerTrust />
+      {/* <CustomerTrust /> */}
       <FAQs />
       <Footer onContactClick={openContactModal} />
       <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
