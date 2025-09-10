@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, User, Mail, MessageSquare, Building } from 'lucide-react';
+import { X, Send, User, Mail, MessageSquare, Building ,PhoneCall } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -11,6 +11,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     name: '',
     email: '',
     company: '',
+    phone:'',
     message: ''
   });
 
@@ -19,7 +20,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     // Handle form submission here
     console.log('Form submitted:', formData);
     // Reset form and close modal
-    setFormData({ name: '', email: '', company: '', message: '' });
+    setFormData({ name: '', email: '', company: '',phone:'', message: '' });
     onClose();
   };
 
@@ -61,6 +62,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               placeholder="Enter your full name"
             />
           </div>
+             <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              <Building className="w-4 h-4 inline mr-2" />
+              Company Name
+            </label>
+            <input
+              type="text"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#274F71] focus:border-transparent transition-all duration-200"
+              placeholder="Enter your company name"
+            />
+          </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -77,21 +92,22 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               placeholder="Enter your email"
             />
           </div>
-
-          <div>
+             <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              <Building className="w-4 h-4 inline mr-2" />
-              Company Name
+              <PhoneCall className="w-4 h-4 inline mr-2" />
+              Phone number 
             </label>
             <input
               type="text"
-              name="company"
-              value={formData.company}
+              name="phone"
+              value={formData.phone}
               onChange={handleChange}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#274F71] focus:border-transparent transition-all duration-200"
-              placeholder="Enter your company name"
+              placeholder="Enter your Phone Number"
             />
           </div>
+
+       
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">

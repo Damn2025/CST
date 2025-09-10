@@ -49,9 +49,9 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
            <a href='/'>
             <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'}`} />
             </a>
-            <div className="flex flex-col items-start justify-center">
+            <div className="flex flex-col items-start justify-center sm:pt-[24px]">
               <div>
-                <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl sm:text-3xl'}`}>
+                <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl sm:text-xl md:xl'}`}>
                   <span className="font-extrabold">T</span>HERMO<span className="font-extrabold italic">Soft</span>
                 </span>
              </div>
