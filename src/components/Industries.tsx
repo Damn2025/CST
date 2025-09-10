@@ -196,7 +196,11 @@ const Industries: React.FC = () => {
 
           <div ref={cardsContainerRef} className="flex overflow-hidden pb-4 -mx-4 px-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {industries.map((industry, index) => (
-              <div key={index} ref={el => cardRefs.current[index] = el} className="flex-shrink-0  w-full sm:w-1/2 lg:w-1/3 snap-center px-4 min-h-[450px]">
+              <div 
+                key={index} 
+                ref={el => cardRefs.current[index] = el} 
+                className="flex-shrink-0  w-full sm:w-1/2 lg:w-1/3 snap-center px-4 min-h-[450px] cursor-pointer"
+                onClick={() => handleFilterClick(index, 'direct')}>
                                <div className="industry-card group relative bg-gradient-to-br from-white to-gray-50 rounded-xl p-8 shadow-lg transition-all duration-500 border border-gray-100 h-full flex flex-col items-center text-center overflow-hidden">
                     <div className={`absolute inset-0 transition-opacity duration-500 ease-in-out ${activeCard === index ? 'opacity-100' : 'opacity-0'}`}>
                       <img src={industry.image} alt={industry.title} className="w-full h-full object-cover" />

@@ -126,7 +126,7 @@ const USPSection: React.FC = () => {
             >
               {activeModule === index ? (
                 <div
-                  className={`${module.color.bg} rounded-[35px] p-10 flex-1 flex flex-col justify-center`}
+                  className={`${module.color.bg}  p-10 flex-1 flex flex-col justify-center`}
                 >
                   <div className="inline-flex items-center gap-3 mb-4">
                     <div className="bg-white/20 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -167,7 +167,7 @@ const USPSection: React.FC = () => {
                     ${index > (activeModule ?? 0) ? `border-l-2 ${module.color.border}` : `border-r-2 ${module.color.border}`}
                   `}
                 >
-                  <span className="transform -rotate-90 whitespace-nowrap font-mono  tracking-widest font-extrabold text-xl sm:text-sm">
+                  <span className=" whitespace-nowrap font-mono  tracking-widest font-extrabold text-xl sm:text-sm">
                      {index+1} 
                   </span>
                 </div>
