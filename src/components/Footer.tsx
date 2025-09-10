@@ -1,5 +1,6 @@
 import React from 'react';
-import { Leaf, Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
+import logo from '../assets/logo.webp';
 
 interface FooterProps {
   onContactClick: () => void;
@@ -11,11 +12,17 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="bg-[#274F71] p-2 rounded-lg">
-                <Leaf className="w-6 h-6" />
+            <div className="flex items-center gap-4">
+              <img src={logo} alt="CST Logo" className="h-16" />
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500">
+                  <span className="font-extrabold">T</span>HERMO<span className="font-extrabold italic">Soft</span>
+                </span>
+                <div className="border-t border-white w-3/4 my-1"></div>
+                <h3 className="font-cursive font-bold text-white text-lg">
+                  Heat Transfer Software
+                </h3>
               </div>
-              <span className="text-xl font-bold">CST Envirotech</span>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Leading provider of environmental monitoring and compliance software solutions for a sustainable future.
@@ -55,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white" />
-                <span className="text-gray-400">info@cstenvirotech.com</span>
+                <span className="text-gray-400 lowercase">SALES@CSTENVIROTECK.IN</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white" />

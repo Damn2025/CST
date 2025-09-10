@@ -26,13 +26,13 @@ const associates = [
     name: 'Udo Ziegler', 
     logo: logo2,
     post: 'Process & Plant Layout.',
-    description: 'Leads ZEPCON Engineering, a German firm founded in 1991, specializing in process engineering, plant layout, and manufacturing technology, with global projects in energy, biomass, food, and chemical industries..'
+    description: 'Leads ZEPCON Engineering, a German firm founded in 1991, specializing in process engineering, plant layout, and manufacturing technology, with global projects in energy, biomass, food, and chemical industries.'
   },
   { 
     name: 'Colonel Sukhpal Singh Khetarpal', 
     logo: logo3,
     post: 'Vice President – Sustainable Futures ',
-    description: 'An Indian Armed Forces veteran with 38+ years of service. With postgraduate degrees in Physics and Business Administration, he has led in academia and industry, driving ESG initiatives, GHG management, and sustainable collaborations with universities and industries.'
+    description: 'An Indian Armed Forces veteran with 38+ years of service. With postgraduate degrees in Physics and Business Administration, he has led academia and industry, driving ESG initiatives, GHG management, and sustainable collaborations with universities and industries'
   },
   { 
     name: 'Tapan Jain', 
@@ -50,13 +50,13 @@ const associates = [
     name: 'JM Paul', 
     logo: logo6,
     post: 'Project Finance Controller',
-    description: 'A seasoned professional since 1972 and head of JM Paul & Co. Chartered Accountants, supports CST EnviroBreeze with sustainable project development, cost planning, tax compliance, and financial structuring. His expertise ensures optimized resources, regulatory alignment, and long-term business success.'
+    description: 'A seasoned professional since 1972 and head of JM Paul & Co. Chartered Accountants, supports CST EnviroBreeze with sustainable project development, cost planning, tax compliance, and financial structuring. His expertise ensures optimized resources and long-term business success.'
   },
   { 
     name: 'Pankaj R. Kalaskar', 
     logo: logo7,
     post: 'Process Heat Exchange Expert',
-    description: ' Brings 20 years of expertise in heat transfer and engineering. With prior roles at Tranter and DESCO, he specializes in PHEs, Spiral, Block, Shell & Plate, and Pillow Plate Heat Exchangers, offering strong technical leadership and project management, also dedicated to driving innovation and efficiency in thermal solutions.'
+    description: ' Brings 20 years of expertise in heat transfer and engineering. He specializes in PHEs, Spiral, Block, Shell & Plate, and Pillow Plate Heat Exchangers, offering strong technical leadership and project management, also dedicated to driving innovation in thermal solutions.'
   },
   { 
     name: 'Craig Bevan', 

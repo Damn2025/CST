@@ -71,6 +71,10 @@ const painPointsData = [
     title: 'Inefficient and Complex Equipment and Component Design & Selection',
     // content: "Our software streamlines the design and selection for a vast array of equipment, from heat exchangers to cooling towers, addressing the complexities of modern engineering.",
     // image: "https://placehold.co/400x300/F06449/white?text=1",
+    color: {
+      front: 'bg-gradient-to-br from-blue-800 to-blue-900',
+      back: 'bg-blue-200'
+    },
     image:USP1,
     icon: SlidersHorizontal,
     points: [
@@ -87,6 +91,10 @@ const painPointsData = [
     title: 'Challenges in Providing Customer Selection Tools',
     // content: 'Empower your customers with intuitive and accessible tools to select the right coils independently, enhancing their experience and reducing the workload on your sales and engineering teams.',
       // image: "https://placehold.co/400x300/B85042/white?text=2",
+    color: {
+      front: 'bg-pink-800',
+      back: 'bg-pink-200'
+    },
         image:USP2,
     icon: Users,
     points: [
@@ -103,6 +111,10 @@ const painPointsData = [
     title: 'Difficulties in Production Documentation',
     // content: 'Automate the creation of essential production documents, including circuitry designs and metal sheet drawings, to streamline manufacturing and minimize costly errors.',
     // image: "https://placehold.co/400x300/69B59F/white?text=3",
+    color: {
+      front: 'bg-orange-800',
+      back: 'bg-orange-200'
+    },
     image:USP3,
     icon: FileText,
     points: [
@@ -119,6 +131,10 @@ const painPointsData = [
     title: 'Complexity of Thermal and Fluid Dynamic Calculations',
     // content: 'Backed by our Thermodynamics Engineering team, our software provides cutting-edge solutions for complex calculations, enabling detailed simulations of chillers, heat pumps, and special refrigerant cycles.',
     // image: "https://placehold.co/400x300/EDC7B7/white?text=4",
+    color: {
+      front: 'bg-blue-800',
+      back: 'bg-blue-200'
+    },
     image:USP4,
     icon: Cpu,
     points: [
@@ -135,6 +151,10 @@ const painPointsData = [
     title: 'Integration of Calculation Engines into Existing Systems',
     // content: "Seamlessly integrate our powerful coils calculation engine into your existing desktop or online software, eliminating the need for costly and time-consuming in-house development.",
     // image: "https://placehold.co/400x300/B85042/white?text=5",
+    color: {
+      front: 'bg-pink-800',
+      back: 'bg-pink-200'
+    },
     image:USP5,
     icon: Puzzle,
     points: [
@@ -151,6 +171,10 @@ const painPointsData = [
     title: 'Meeting Industry Certifications (AHRI/Eurovent)',
     // content: "With over 25 years of experience, we provide expert support to help you navigate the significant hurdles of AHRI/Eurovent certification for coils and AHUs.",
     // image: "https://placehold.co/400x300/A54F3B/white?text=6",
+    color: {
+      front: 'bg-orange-400',
+      back: 'bg-orange-200'
+    },
     image:USP1,
     icon: Award,
     points: [
@@ -228,22 +252,22 @@ const IndustriesPain = () => {
           overflow: hidden;
         }
         .card-front {
-          background-color:#274F71; /* Equivalent to bg-gray-800 */
+          /* background-color:#274F71;  Replaced with dynamic classes */
         }
         .card-back {
-          background-color:rgb(0, 0, 0); /* A slightly different dark color for the back */
+          /* background-color:#A5C1D9; Replaced with dynamic classes */
           transform: rotateY(180deg);
           padding: 1rem; /* p-4 */
-          color: #d1d5db;
+          color:black;
         }
       
       `}</style>
       <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-black text-center mb-12 px-4">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-black text-center mb-12 px-4">
             Solving Core Industry Challenges
         </h2>
-        <p className=" text-xl sm:text-lg text-gray-600  font-semibold text-center max-w-4xl mx-auto mt-8 mb-12 px-6">
-         CST ThermoSoft's software solutions address several key pain points for manufacturers operating in the HVAC&R, Energy & Power, Chemical, Pharmaceutical, Food & Beverage, and Automotive sectors. 
+        <p className=" text-base sm:text-lg text-gray-600  font-semibold text-center max-w-4xl mx-auto mt-8 mb-12 px-6">
+         CST ThermoSoft&apos;s software solutions address several key pain points for manufacturers operating in the HVAC&R, Energy & Power, Chemical, Pharmaceutical, Food & Beverage, and Automotive sectors. 
         </p>
     
         
@@ -274,25 +298,27 @@ const IndustriesPain = () => {
                   style={{ transform: flippedCardId === card.id ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
                 >
                   {/* Card Front */}
-                  <div className="card-front">
+                  <div className={`card-front ${card.color.front}`}>
                     <img 
                       src={card.image} 
                       alt={card.title} 
                       className="w-full h-40 sm:h-48 object-cover"
                     /> 
                     <div className="p-4 w-full">
-                      <h3 className="   text-xl font-bold text-white mb-2 ">{card.title}</h3>
+                      <h3 className="text-lg sm:text-xl font-bold text-white font-[Inter] mb-2 ">{card.title}</h3>
                       
                     </div>
                   </div>
                   
                   {/* Card Back */}
-                  <div className="card-back p-2 sm:p-4">
+                  <div className={`card-back p-2 sm:p-4 ${card.color.back}`}>
                     <div className="border border-white rounded-lg p-2 h-full">
+                       <h3 className="font-bold text-black text-center mb-2 text-base sm:text-lg">{card.title}</h3>
+                       <div className="w-full h-0.5 bg-black my-4 sm:my-1"></div>
                       {card.points && card.points.length > 0 && (
-                        <ul className="text-base list-disc text-white text-left w-full space-y-2 mt-4 pl-6 pr-2">
+                        <ul className="text-xs sm:text-sm font-medium list-disc text-black text-left w-full space-y-2 mt-4 pl-6 pr-2 ">
                           {card.points.map((point, index) => (
-                            <li key={index} className="text-white-400 font-semibold italic">{point}</li>
+                            <li key={index} className="text-black-400 font-semibold italic">{point}</li>
                           ))}
                         </ul>
                       )}

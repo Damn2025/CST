@@ -25,26 +25,30 @@ const Industries: React.FC = () => {
       icon: Factory,
       title: 'Heat Exchangers',
       description: 'operating in the HVAC and Refrigeration, Energy & Power, Chemical/Pharmaceutical, Food & Beverage, and Automotive.',
-      image: heatExchangerImg
+      image: heatExchangerImg,
+      color: 'orange'
     },
     {
       icon: Building,
       title: 'HVAC Equipment',
       description: 'Including Chillers and Heat Pumps, Close Control Units, Air Handling Units, Fancoil Units, Remote Condensers, Dry Cooler, Brine Coolers, etc.',
-      image: hvacImg
+      image: hvacImg,
+      color: 'pink'
     },
     {
       icon: TreePine,
       title: 'AHRI/Eurovent Certification',
       description: 'We have over 25 years of experience in supporting our customers get Eurovent and AHRI Certification, for Coils and AHUs.',
-      image: certificationImg
+      image: certificationImg,
+      color: 'green'
     
     },
     {
       icon: Droplets,
       title: 'New Refrigerants',
       description: 'Committed to sustainability with REFPROP 10 integration, supporting eco-friendly refrigerants like R32, R449A, R1234yf/ze, R454B/C, Propane, CO₂, Ammonia, and more.',
-      image: refrigerantsImg
+      image: refrigerantsImg,
+      color: 'blue'
     },
   
   ];
@@ -174,11 +178,16 @@ const Industries: React.FC = () => {
               <button
                 key={index}
                 onClick={() => handleFilterClick(index, 'direct')}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
-                  activeCard === index
-                    ? 'bg-[#274F71] text-white shadow-lg'
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${ activeCard === index
+                    ? {
+                        blue: 'bg-blue-600 text-white shadow-lg',
+                        pink: 'bg-pink-600 text-white shadow-lg',
+                        orange: 'bg-orange-500 text-white shadow-lg',
+                        green:'bg-green-800 text-white shadow-lg'
+                      }[industry.color] || 'bg-blue-600 text-white shadow-lg'
                     : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
-                }`}
+                  }`
+                }
               >
                 {industry.title}
               </button>
@@ -194,8 +203,15 @@ const Industries: React.FC = () => {
                       <div className="absolute inset-0 bg-black/60"></div>
                     </div>
                     <div className={`relative z-10 transition-colors duration-500 ${activeCard === index ? 'text-white' : 'text-gray-900'}`}>
-
-                    <div className="bg-[#274F71] w-14 h-14 rounded-lg flex items-center justify-center mb-7 transition-transform duration-300">
+                    <div className={`w-14 h-14 rounded-lg flex items-center justify-center mb-7 transition-transform duration-300 ${
+                      {
+                        blue: 'bg-blue-600',
+                        pink: 'bg-pink-600',
+                        orange: 'bg-orange-500',
+                        green:'bg-green-800'
+                      }[industry.color] || 'bg-blue-600'
+                    }
+                   `}>
                       <industry.icon className="w-7 h-7 text-white " />
                     </div>
                       <h3 className={` font-bold mb-4 transition-colors duration-500 ${activeCard === index ? 'text-white text-2xl font-extrabold' : 'text-gray-900 text-xl font-bold'}`}>{industry.title}</h3>
