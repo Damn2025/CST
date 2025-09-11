@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Cloud, Globe, Shield, Smartphone, AlertTriangle, TrendingUp } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -45,46 +44,46 @@ const Features: React.FC = () => {
 
   const features = [
     {
-      icon: Cloud,
-      title: 'Cloud-Based Platform',
-      description: 'Secure, scalable cloud infrastructure with 99.9% uptime guarantee',
-       iconBg: 'bg-[#274F71]',
+      title: 'Web-Based Platform',
+      description: 'No installation required. Our platform runs directly in your browser for instant access anywhere.',
+      iconBg: 'bg-[#274F71]',
       hoverBg: 'from-blue-50 to-gray-100',
+      shadowColor: 'hover:shadow-blue-500/30',
     },
     {
-      icon: Globe,
-      title: 'Global Monitoring',
-      description: 'Monitor multiple locations worldwide from a single dashboard',
-       iconBg: 'bg-pink-500',
+      title: 'Dual Calculation Modes',
+      description: 'Design from scratch with only thermal data, or specify dimensions for precise rating calculations.',
+      iconBg: 'bg-pink-500',
       hoverBg: 'from-pink-50 to-pink-100',
+      shadowColor: 'hover:shadow-pink-500/30',
     },
     {
-      icon: Shield,
-      title: 'Data Security',
-      description: 'Enterprise-grade security with end-to-end encryption and compliance',
-       iconBg: 'bg-orange-500',
+      title: 'Broad Industry Application',
+      description: 'Applicable across diverse sectors including HVAC&R, Chemical, Pharmaceutical, Energy, and Automotive.',
+      iconBg: 'bg-orange-500',
       hoverBg: 'from-orange-50 to-orange-100',
+      shadowColor: 'hover:shadow-orange-500/30',
     },
     {
-      icon: Smartphone,
-      title: 'Mobile Access',
-      description: 'Access your data anywhere with our responsive mobile application',
-       iconBg: 'bg-blue-500',
+      title: 'Global User Base',
+      description: 'Trusted by over 500 customers in more than 70 countries, establishing a global benchmark for reliability.',
+      iconBg: 'bg-blue-500',
       hoverBg: 'from-blue-50 to-blue-100',
+      shadowColor: 'hover:shadow-blue-500/30',
     },
     {
-      icon: AlertTriangle,
-      title: 'Smart Alerts',
-      description: 'AI-powered alerts that learn from your patterns and reduce false positives',
-       iconBg: 'bg-green-500',
+      title: 'Flexible Usage Plans',
+      description: 'Choose from a variety of plans to suit your project needs, from 7 days to a full year.',
+      iconBg: 'bg-green-500',
       hoverBg: 'from-green-50 to-green-100',
+      shadowColor: 'hover:shadow-green-500/30',
     },
     {
-      icon: TrendingUp,
-      title: 'Predictive Analytics',
-      description: 'Forecast environmental trends and potential issues before they occur',
-       iconBg: 'bg-yellow-500',
-      hoverBg: 'from-yellow-50 to-yellow-100',
+      title: 'Proven Reliability',
+      description: 'High accuracy in technical data ensures optimized results for critical engineering projects.',
+      iconBg: 'bg-purple-500',
+      hoverBg: 'from-purple-50 to-purple-100',
+      shadowColor: 'hover:shadow-purple-500/30',
     }
   ];
 
@@ -104,11 +103,8 @@ const Features: React.FC = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`feature-card  bg-white hover:bg-gradient-to-br ${feature.hoverBg}  rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 group`}
+              className={`feature-card bg-white hover:bg-gradient-to-br ${feature.hoverBg} rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group ${feature.shadowColor} hover:transform-rotate-1`}
             >
-              <div className={`${feature.iconBg} w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <feature.icon className="w-7 h-7 text-white" />
-              </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
               <p className="text-gray-600 leading-relaxed">{feature.description}</p>

@@ -12,6 +12,7 @@ const cardsData = [
   {
     id: 1,
     title: "Extensive Experience and Specialisation",
+    shortTitle:"Experience",
     image: USP1,
     icon: SlidersHorizontal,
     color: {
@@ -24,6 +25,7 @@ const cardsData = [
   {
     id: 2,
     title: " Deep Thermodynamics Engineering Expertise",
+    shortTitle:"Thermo Expertise",
     icon: SlidersHorizontal,
     color: {
       bg: 'bg-pink-800',
@@ -35,6 +37,7 @@ const cardsData = [
   {
     id: 3,
     title: "Comprehensive & Specialized Software Portfolio",
+    shortTitle:"Software Portfolio",
     image: USP3,
     icon: SlidersHorizontal,
     color: {
@@ -54,6 +57,7 @@ const cardsData = [
   {
     id: 4,
     title: "Global Reach and Trusted by Numerous Customers",
+    shortTitle:"Global Reach",
     icon:SlidersHorizontal,
     color: {
       bg: 'bg-blue-800',
@@ -69,6 +73,7 @@ const cardsData = [
   {
     id: 5,
     title: " Focus on Efficiency and Business Transformation",
+    shortTitle:"Business Transformation",
     icon: Lightbulb,
     color: {
       bg: 'bg-pink-800',
@@ -84,6 +89,7 @@ const cardsData = [
   {
     id: 6,
     title: "Commitment to AI & Data Governance",
+    shortTitle:"AI& Data Governance",
     icon: SlidersHorizontal,
     color: {
       bg: 'bg-orange-800',
@@ -106,7 +112,7 @@ const USPSection: React.FC = () => {
             
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
         
-            How Our Selling Proposition Is Different ? 
+            How Our Selling Proposition Is Unique ? 
           </h2>
            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           CST ThermoSoft's software solutions' Unique Selling Propositions (USPs) are rooted in its deep expertise, comprehensive software offerings, customer-centric approach, and commitment to innovation within the heat transfer industry.
@@ -167,8 +173,8 @@ const USPSection: React.FC = () => {
                     ${index > (activeModule ?? 0) ? `border-l-2 ${module.color.border}` : `border-r-2 ${module.color.border}`}
                   `}
                 >
-                  <span className=" whitespace-nowrap font-mono  tracking-widest font-extrabold text-xl sm:text-sm">
-                     {index+1} 
+                  <span className=" transform -rotate-90 whitespace-nowrap font font-bold text-xl sm:text-sm">
+                     {module.shortTitle} 
                   </span>
                 </div>
               )}

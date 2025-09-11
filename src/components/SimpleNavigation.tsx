@@ -41,28 +41,26 @@ const SimpleNavigation: React.FC<SimpleNavigationProps> = ({ onContactClick }) =
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
              <button
-              onClick={onContactClick}
-              className="bg-[#274F71] hover:bg-[#1e3a56] text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
-            >
+               onClick={onContactClick}
+               className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
+             >
               Contact Us
-            </button>
-            <Link to='/plans'>
-              <button className="bg-pink-600 hover:bg-pink-700 hover:scale-110 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                Plans
-              </button>
+               <span className="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
+             </button>
+            <Link to='/plans' className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+              Plans
+              <span className="absolute bottom-0 left-0 h-0.5 bg-pink-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
             </Link>
             {location.pathname !== '/login' && (
-              <Link to='/login'>
-                <button className="bg-[#1B76ED] hover:bg-[#1B76ED] text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                  Login
-                </button>
+              <Link to='/login' className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                Login
+                <span className="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
               </Link>
             )}
             {location.pathname !== '/signup' && !isAuthenticated && (
-              <Link to="/signup">
-                <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
-                  Sign Up
-                </button>
+              <Link to="/signup" className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                Sign Up
+                <span className="absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
               </Link>
             )}
           </div>
@@ -77,34 +75,32 @@ const SimpleNavigation: React.FC<SimpleNavigationProps> = ({ onContactClick }) =
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-4 pt-2 pb-4 space-y-2">
             <button
               onClick={() => { onContactClick(); toggleMobileMenu(); }}
-              className="block w-full text-left px-3 py-2 rounded-lg font-semibold transition-colors duration-200 bg-[#274F71] text-white hover:bg-[#1e3a56]"
+              className="group relative block w-full text-left px-3 py-3 rounded-lg font-semibold text-gray-800 transition-colors duration-200 hover:bg-gray-50"
             >
               Contact Us
+              <span className="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
             </button>
             <Link
               to="/plans"
               onClick={toggleMobileMenu}
-              className="block w-full text-left"
+              className="group relative block w-full text-left px-3 py-3 rounded-lg font-semibold text-gray-800 transition-colors duration-200 hover:bg-gray-50"
             >
-              <button className="w-full text-left bg-pink-600 hover:bg-pink-700 text-white px-3 py-2 rounded-lg font-semibold transition-all duration-300">
               Plans
-            </button>
+              <span className="absolute bottom-0 left-0 h-0.5 bg-pink-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
             </Link>
             {location.pathname !== '/login' && (
-              <Link to="/login" onClick={toggleMobileMenu} className="block w-full text-left">
-                <button className="w-full text-left bg-blue-400 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold transition-all duration-300">
-                  Login
-                </button>
+              <Link to="/login" onClick={toggleMobileMenu} className="group relative block w-full text-left px-3 py-3 rounded-lg font-semibold text-gray-800 transition-colors duration-200 hover:bg-gray-50">
+                Login
+                <span className="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
               </Link>
             )}
             {location.pathname !== '/signup' && !isAuthenticated && (
-              <Link to="/signup" onClick={toggleMobileMenu} className="block w-full text-left">
-                <button className="w-full text-left bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 rounded-lg font-semibold transition-all duration-300">
-                  Sign Up
-                </button>
+              <Link to="/signup" onClick={toggleMobileMenu} className="group relative block w-full text-left px-3 py-3 rounded-lg font-semibold text-gray-800 transition-colors duration-200 hover:bg-gray-50">
+                Sign Up
+                <span className="absolute bottom-0 left-0 h-0.5 bg-orange-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
               </Link>
             )}
           </div>

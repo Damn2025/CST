@@ -1,6 +1,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { gsap } from 'gsap';
+import comp1 from "../assets//Companies/comp1.webp"
+import comp2 from "../assets//Companies/comp2.webp"
+import comp3 from "../assets//Companies/comp3.webp"
+import comp4 from "../assets//Companies/comp4.webp"
+import comp5 from "../assets//Companies/comp5.webp"
+import comp6 from "../assets//Companies/comp6.webp"
+import comp7 from "../assets//Companies/comp7.webp"
+import './Gallery.css'; // Import the new CSS file
 
 // You can replace these with your actual logo imports
 
@@ -11,9 +19,19 @@ import logo4 from '../assets/associates/TapanJAin.webp';
 import logo5 from '../assets/associates/AmitJoshi.png';
 import logo6 from '../assets/associates/JMPaul.png';
 import logo7 from '../assets/associates/Pankaj.webp';
-import logo8 from '../assets/associates/Dr.jagjit.webp';
+import logo8 from '../assets/associates/NeerjaShonek.png';
 import logo9 from '../assets/associates/JMPaul.webp';
 import logo10 from '../assets/associates/Craig.png';
+
+const companies = [
+  { name: "Company A", url:comp1 },
+  { name: "Company B", url: comp2 },
+  { name: "Company C", url:comp3 },
+  { name: "Company D", url: comp4  },
+  { name: "Company E", url: comp5},
+  { name: "Company F", url: comp6},
+  { name: "Company G", url: comp7 },
+];
 
 const associates = [
   { 
@@ -26,13 +44,13 @@ const associates = [
     name: 'Udo Ziegler', 
     logo: logo2,
     post: 'Process & Plant Layout.',
-    description: 'Leads ZEPCON Engineering, a German firm founded in 1991, specializing in process engineering, plant layout, and manufacturing technology, with global projects in energy, biomass, food, and chemical industries.'
+    description: 'Leads ZEPCON Engineering, a German firm founded in 1991, specializing in process engineering, plant layout, and manufacturing technology, with global projects in energy, biomass, food, and chemical industries. The company thrives on Client-focused, strategic, sustainable innovation'
   },
   { 
     name: 'Colonel Sukhpal Singh Khetarpal', 
     logo: logo3,
     post: 'Vice President – Sustainable Futures ',
-    description: 'An Indian Armed Forces veteran with 38+ years of service. With postgraduate degrees in Physics and Business Administration, he has led academia and industry, driving ESG initiatives, GHG management, and sustainable collaborations with universities and industries'
+    description: 'An Indian Armed Forces veteran with 38+ years of service. He has demonstrated exceptional leadership academia and industry, driving ESG initiatives, GHG management, and sustainable collaborations with universities and industries'
   },
   { 
     name: 'Tapan Jain', 
@@ -64,7 +82,42 @@ const associates = [
     post: 'The Data Center Man',
     description: 'A Senior Data Centre Expert with 30+ years across EMEA and APAC, and a strong Middle East presence since 2008. He specialises in sustainable, scalable solutions from site selection to MEP/IT systems and full lifecycle management, championing net-zero operations and AI-driven cooling'
   },
+   { 
+    name: 'Neerja Shonek', 
+    logo: logo8,
+    post: 'The Data Center Man',
+    description: 'A Senior Data Centre Expert with 30+ years across EMEA and APAC, and a strong Middle East presence since 2008. He specialises in sustainable, scalable solutions from site selection to MEP/IT systems and full lifecycle management, championing net-zero operations and AI-driven cooling'
+  },
 ];
+
+const Gallery = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (track) {
+      const items = Array.from(track.children);
+
+      // Duplicate the items to create a seamless loop
+      items.forEach((item) => {
+        const clone = item.cloneNode(true);
+        track.appendChild(clone);
+      });
+    }
+  }, []);
+
+  return (
+    <div className="gallery-container">
+      <div className="gallery-track" ref={trackRef}>
+        {companies.map((company, index) => (
+          <div className="gallery-item" key={index}>
+            <img src={company.url} alt={`${company.name} Logo`} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Associates: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Start at the first "real" item
@@ -145,6 +198,7 @@ const Associates: React.FC = () => {
 
           <button onClick={() => handleNavClick('next')} className="absolute -right-4 sm:-right-8 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white transition-all"><ChevronRight className="w-6 h-6 text-gray-700" /></button>
         </div>
+        <Gallery />
       </div>
     </section>
   );

@@ -72,27 +72,37 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
               </button>
             ))} */}
             <a
-              href="/plans" // Assuming you will set up a route for /plans
-              className={`px-4 py-2 lg:px-5 lg:py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm lg:text-base ${isScrolled ? 'bg-gray-200 hover:bg-gray-200 text-gray-800' : 'bg-white/10 hover:bg-white/20 text-white  border border-white/20'}`}
+              href="/plans"
+              className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg  ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             >
-              Plans
+              Pricing
+              <span className={`absolute bottom-0 left-0 h-0.5  bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
             </a>
-            {!isAuthenticated && (
-              <button>
-                <a
-                  href="/signup" // Assuming you will set up a route for /signup
-                  className={`px-4 py-2 lg:px-5 lg:py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm lg:text-base ${isScrolled ? 'bg-gray-200 hover:bg-gray-200 text-gray-800' : 'bg-white/10 hover:bg-white/20 text-white  border border-white/20'}`}
-                >
-                  Sign Up
-                </a>
-              </button>
-            )}
             <button
               onClick={onContactClick}
-              className={`px-4 py-2 lg:px-6 lg:py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105 ${isScrolled ? 'bg-[#274F71] hover:bg-[#1e3a56] text-white' : 'bg-white/10 hover:bg-white/20 text-white border border-white/20'}`}
+              className={`group relative text-xl px-4 py-2 lg:px-6 lg:py-2 rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg ${isScrolled ? ' text-black' : 'text-white'}`}
             >
-              Contact Us
+              Contact
+              <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
             </button>
+            {isAuthenticated && (
+              <a
+                href="/login"
+                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              >
+                Login
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
+              </a>
+            )}
+            {!isAuthenticated && (
+              <a
+                href="/signup"
+                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              >
+                Sign Up
+                <span className={`absolute bottom-0 left-0 h-0.5 ${isScrolled ? 'bg-blue-500' : 'bg-white'} transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
+              </a>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -127,6 +137,14 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
               >
                 Plans
               </a>
+              {!isAuthenticated && (
+                <a
+                  href="/login"
+                  className="block w-full text-left px-3 py-2 rounded-lg font-semibold transition-colors duration-200 mt-4 bg-gray-100 text-gray-800 hover:bg-gray-200"
+                >
+                  Login
+                </a>
+              )}
               {!isAuthenticated && (
                 <a
                   href="/signup"

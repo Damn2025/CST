@@ -5,7 +5,7 @@ import { Mail, Building, MapPin, Phone, Send, ArrowLeft , Circle, CheckCircle, Z
 import logo from '../assets/logo.webp';
 import Backvideo from '../assets/Hvac.mp4';
 import SimpleNavigation from './SimpleNavigation';
-
+//  http://localhost:5678/webhook/200ceba5-dfa9-4b9e-b6b9-b63e560e6806
 interface SignupProps {
   onContactClick: () => void;
 }
@@ -26,21 +26,23 @@ const Signup: React.FC<SignupProps> = ({ onContactClick }) => {
     }
   }, [navigate]);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Signup Form submitted:', formData); // Replace with actual API call
-    const serviceID = "service_cyfaq8j";
-    const templateID = "template_jzg1uvf";
-    const publicKey = "mPRCApbLXDf7hPgxz";
-
-    const templateParams = {
+  const handleSubmit = async (e: React.FormEvent) => {
+     const templateParams = {
       user_name: formData.organization,
       email:formData.email,
       plans_link:'https://cstsoft.netlify.app/plans' // ✅ dynamic link
     };
-
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
+      const serviceID = "service_cyfaq8j";
+        const templateID = "template_jzg1uvf";
+        const publicKey = "mPRCApbLXDf7hPgxz";
+    e.preventDefault();
+    // try {
+    //   const response = await fetch("http://localhost:5678/webhook-test/200ceba5-dfa9-4b9e-b6b9-b63e560e6806", {
+    //     method: "POST",
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify(templateParams),
+    //   });
+  emailjs.send(serviceID, templateID, templateParams, publicKey)
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
         alert("Welcome email sent!");
@@ -55,7 +57,6 @@ const Signup: React.FC<SignupProps> = ({ onContactClick }) => {
     navigate('/');
     // You could add logic here to show a success message
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
