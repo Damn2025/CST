@@ -40,6 +40,11 @@ const SimpleNavigation: React.FC<SimpleNavigationProps> = ({ onContactClick }) =
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4">
+           
+            <Link to='/' className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+              Home
+              <span className="absolute bottom-0 left-0 h-0.5 bg-pink-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
+            </Link>
              <button
                onClick={onContactClick}
                className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg"
@@ -47,6 +52,7 @@ const SimpleNavigation: React.FC<SimpleNavigationProps> = ({ onContactClick }) =
               Contact Us
                <span className="absolute bottom-0 left-0 h-0.5 bg-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>
              </button>
+
             <Link to='/plans' className="group relative text-gray-800 px-6 py-2 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
               Plans
               <span className="absolute bottom-0 left-0 h-0.5 bg-pink-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full"></span>

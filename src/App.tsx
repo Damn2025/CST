@@ -28,7 +28,6 @@ const HomePage = ({ onContactClick }: { onContactClick: () => void }) => (
     <Hero onContactClick={onContactClick} />
     <IndustriesPain />
     <SoftwareExplanation />
-    <Benefits />
     <HowItWorks />
     <Features />
     <Industries/>

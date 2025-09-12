@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect } from 'react';
 import USP1 from '../assets/USP/USP1.png'
 import USP2 from '../assets/USP/USP2.jpg'
 import USP3 from '../assets/USP/USP3.png'
@@ -46,12 +46,10 @@ const cardsData = [
     },
     description: "We offer over thirty software solutions for a vast array of components and equipment. This includes specialized tools for:",
     points: [
-      " Finned Pack Heat Exchangers (design, sales, production)",
-      " Shell & Tube Heat Exchangers (design, rating, selection)",
-      "Plate & Shell, PHE (Gasketed & Brazed), Tube in Tube, Microchannel, Pillow Plate Banks, Coaxial Heat Exchangers, Wrap-Around & Monoflat Heat Pipe",
-      "HVAC Equipment like Air Handling Units, Chillers, DHW Heat Pumps, Rooftops, Close Control Units, Cold Rooms, Unit Coolers, Air Coolers, Remote Condensers, Dry Coolers,Fan-Coils, Air Conditioners, Condensing Units, and Cooling Towers.",
-      "Specific problem-solving tools for design, verification, and selection, for customer selection, for circuitry design and metal sheet drawings, and for simulating complex refrigerant cycles in various units.",
-      "INNOVSuite for creating innovative heat exchangers."
+              " Heat Exchangers – Finned Pack, Shell & Tube, Plate & Shell, PHE, Tube-in-Tube, Microchannel, Pillow Plate, Coaxial, Wrap-Around & Heat Pipe",
+"HVAC Equipment – AHUs, Chillers, Heat Pumps, Rooftops, Cold Rooms, Unit Coolers, Condensers, Dry Coolers, Fan-Coils, ACs, Condensing Units, Cooling Towers",
+"Tools – Design, Verification, Selection, Simulation & Drawings",
+"INNOVSuite – Innovative Heat Exchanger Solutions"
     ]
   },
   {
@@ -63,11 +61,11 @@ const cardsData = [
       bg: 'bg-blue-800',
       border: 'border-blue-700'
     },
-    description: " We are trusted by over 600 customers in more than 75 countries. This broad customer base across diverse markets (HVAC&R, Energy & Power, Chemical, Pharmaceutical, Food & Beverage, and Automotive) highlights their proven reliability and global applicability.",
+    description: " Trusted by 600+ customers across 75+ countries in industries like HVAC&R, Energy, Chemical, Pharma, Food & Beverage, and Automotive — proving our global reliability and versatility.",
     image: USP4,
-    points: ["Certification Support (AHRI & Eurovent): 25+ years helping customers achieve certifications with ease and confidence.",
-        "Commitment to New Refrigerants Actively implementing REFPROP 10 with eco-friendly refrigerants like R32, CO₂, Ammonia, and more to meet evolving standards.",
-        " Integration Capabilities (DLL & WEB APIs): The provision of new COILS DLL & WEB APIs allows customers to integrate CST TermoSoft's powerful calculation engines directly into their own desktop or online software. This offers flexibility and customization, preventing customers from needing to develop such complex engines in-house.",
+    points: ["Certification Support – 25+ yrs with AHRI & Eurovent",
+"Eco Refrigerants – REFPROP 10, R32, CO₂, Ammonia & more",
+"Integration – COILS DLL & Web APIs for flexible software use"
     ]
   },
   {
@@ -79,32 +77,21 @@ const cardsData = [
       bg: 'bg-pink-800',
       border: 'border-pink-700'
     },
-    description: "Their overarching mission is to ' Discover our Software, Save Time & transform your business'. Their solutions are explicitly 'aimed at streamlining equipment and component design & selection' to help both technical and sales departments. AI is integrated into software, with specific plans for future AI integration within the software solutions.",
+    description: "Mission: Empower businesses to streamline equipment design & selection, save time, and transform operations with AI-enabled solutions.",
     image: USP5,
     points: ["Data governance in the era of generative artificial intelligence",
         "The AI Tour",
-        "We are exploring the implications of AI, particularly generative AI, and its role in digital models and data governance. Therefore, while CST TermoSoft is engaging with the concept of AI through their blog, the sources do not provide specific information on how AI can be or is being integrated into their software products."
+        "Exploring generative AI’s role in digital models and governance; CST TermoSoft discusses AI in blogs but no product integration is detailed."
     ]
-  },
-  {
-    id: 6,
-    title: "Commitment to AI & Data Governance",
-    shortTitle:"AI& Data Governance",
-    icon: SlidersHorizontal,
-    color: {
-      bg: 'bg-orange-800',
-      border: 'border-orange-700'
-    },
-    description: "Another card to test the horizontal scroll functionality and the new clicking feature.",
-    image: USP5,
-    points: []
   },
 
 ];
 
 const USPSection: React.FC = () => {
   const [activeModule, setActiveModule] = useState<number | null>(0);
-
+  useEffect(() => {
+    setActiveModule(0)
+  }, [])
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -142,11 +129,11 @@ const USPSection: React.FC = () => {
                       USP {index+1}
                     </p>
                   </div>
-                  <div className="flex flex-row items-center gap-8">
-                    <div className="flex-1">
-                      <h3 className="text-2xl md:text-3xl font-bold text-white my-2">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white my-2">
                         {module.title}
                       </h3>
+                  <div className="flex flex-row items-center gap-8">
+                    <div className="flex-1">
                         <p className="text-white mt-5 italic leading-relaxed">
                     {module.description}
                   </p>
@@ -173,7 +160,7 @@ const USPSection: React.FC = () => {
                     ${index > (activeModule ?? 0) ? `border-l-2 ${module.color.border}` : `border-r-2 ${module.color.border}`}
                   `}
                 >
-                  <span className=" transform -rotate-90 whitespace-nowrap font font-bold text-xl sm:text-sm">
+                  <span className=" transform -rotate-90 whitespace-nowrap font font-bold text-xl sm:text-large">
                      {module.shortTitle} 
                   </span>
                 </div>

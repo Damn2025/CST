@@ -25,7 +25,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
               </div>
             </div>
             <p className="text-gray-400 leading-relaxed">
-              Leading provider of environmental monitoring and compliance software solutions for a sustainable future.
+               An experienced, independent, and unique software house capable of complementing our programming and AI skills with strong, dedicated thermal engineering experts.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
@@ -62,15 +62,15 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-white" />
-                <span className="text-gray-400 lowercase">SALES@CSTENVIROTECK.IN</span>
+                <span className="text-gray-400 lowercase">salescstenvirotech@gmail.com</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-white" />
                 <span className="text-gray-400">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-white" />
-                <span className="text-gray-400">San Francisco, CA</span>
+                <MapPin className="w-8 h-8 text-white" />
+                <span className="text-gray-400">1234, Plus Offices, Landmark Building, Sector 67, Gurgaon, Haryana, India</span>
               </div>
             </div>
             
@@ -85,7 +85,7 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-gray-400">
-            © 2025 CST Envirotech. All rights reserved. | Privacy Policy | Terms of Service
+            Copyright © 2025 Enviro Breeze - All Rights Reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

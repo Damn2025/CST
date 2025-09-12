@@ -9,6 +9,19 @@ gsap.registerPlugin(ScrollTrigger);
 const SoftwareExplanation: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  // Add a style block for the 3D perspective and transitions
+  const style = `
+    .card-container {
+      perspective: 800px;
+    }
+    .card-inner {
+      transition: transform 0.4s ease-out;
+    }
+    .card-container:hover .card-inner {
+      transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
+    }
+  `;
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from('.explanation-title', {
@@ -54,6 +67,7 @@ const SoftwareExplanation: React.FC = () => {
 
   return (
     <section ref={sectionRef} className="bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+      <style>{style}</style>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Side: Content */}
@@ -93,10 +107,13 @@ const SoftwareExplanation: React.FC = () => {
           </div>
 
           {/* Right Side: Image */}
-          <div className="explanation-image">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-blue-500 rounded-2xl opacity-20 blur-2xl"></div>
-              <div className="relative bg-white p-4 rounded-2xl shadow-2xl">
+          <div className="explanation-image card-container">
+            <div
+              className="relative card-inner"
+              style={{ transformStyle: 'preserve-3d' }}
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-blue-500 rounded-2xl opacity-20 blur-2xl group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-white p-4 rounded-2xl shadow-2xl hover:shadow-pink-500/20 transition-shadow">
                 <img src={softwareImage} alt="CST ThermoSoft Software Interface" className="rounded-xl w-full h-auto" />
               </div>
             </div>

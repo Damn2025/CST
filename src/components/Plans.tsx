@@ -197,21 +197,21 @@ const Plans: React.FC<PlansProps> = ({ onContactClick }) => {
           <div className="flex justify-center items-center flex-wrap gap-3 mb-10">
             <button
               onClick={() => setSelectedPlan('')}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
                 !selectedPlan
-                  ? 'bg-[#274F71] text-white shadow-lg scale-105'
+                  ? `bg-gray-800 text-white shadow-lg scale-105`
                   : 'bg-white hover:bg-gray-200 text-gray-700 border border-gray-200'
               }`}
             >
               All Plans
             </button>
-            {plans.map((plan) => (
+            {plans.map((plan, index) => (
               <button
                 key={plan.name}
                 onClick={() => setSelectedPlan(plan.name)}
               className={`px-6 py-3 rounded-full text-base font-semibold transition-all duration-300 ${
                   selectedPlan === plan.name
-                    ? 'bg-[#274F71] text-white shadow-lg scale-105'
+                    ? `${plan.bgColor} ${plan.textColor} shadow-lg scale-105 border-2 ${plan.borderColor}`
                     : 'bg-white hover:bg-gray-200 text-gray-700 border border-gray-200'
                 }`}
               >
@@ -222,15 +222,15 @@ const Plans: React.FC<PlansProps> = ({ onContactClick }) => {
 
           {/* Selected plan full-width card with left-to-right animation */}
           {selectedPlan ? (
-            <div key={selectedPlan} className="w-full animate-slide-in">
+            <div key={selectedPlan} className="w-full flex justify-center">
               {plans
                 .filter((p) => p.name === selectedPlan)
                 .map((plan, index) => (
                   <div
                     ref={(el) => (planRefs.current[index] = el)}
                     key={plan.name}
-                    className={`relative rounded-2xl shadow-xl border-2 overflow-hidden ${
-                      plan.borderColor
+                    className={`relative rounded-2xl shadow-xl border-2 overflow-hidden w-full max-w-4xl ${
+                      plan.borderColor 
                     } ${plan.bgColor}`}
                   >
                    

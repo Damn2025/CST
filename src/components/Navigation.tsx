@@ -73,14 +73,14 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
             ))} */}
             <a
               href="/plans"
-              className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg  ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+              className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-base transition-all duration-300 hover:shadow-lg  ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             >
               Pricing
               <span className={`absolute bottom-0 left-0 h-0.5  bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
             </a>
             <button
               onClick={onContactClick}
-              className={`group relative text-xl px-4 py-2 lg:px-6 lg:py-2 rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg ${isScrolled ? ' text-black' : 'text-white'}`}
+              className={`group relative text-xl px-4 py-2 lg:px-6 lg:py-2 rounded-lg font-base transition-all duration-300 hover:shadow-lg ${isScrolled ? ' text-black' : 'text-white'}`}
             >
               Contact
               <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
@@ -88,7 +88,7 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
             {isAuthenticated && (
               <a
                 href="/login"
-                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-base transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               >
                 Login
                 <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
@@ -97,7 +97,7 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
             {!isAuthenticated && (
               <a
                 href="/signup"
-                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-extrabold transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+                className={`group relative px-4 py-2 lg:px-5 lg:py-2  text-xl rounded-lg font-base transition-all duration-300 hover:shadow-lg   ${isScrolled ? 'text-gray-800' : 'text-white'}`}
               >
                 Sign Up
                 <span className={`absolute bottom-0 left-0 h-0.5 ${isScrolled ? 'bg-blue-500' : 'bg-white'} transition-all duration-300 ease-out transform scale-x-0 group-hover:scale-x-100 origin-right w-full`}></span>
