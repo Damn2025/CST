@@ -13,15 +13,17 @@ import './Gallery.css'; // Import the new CSS file
 // You can replace these with your actual logo imports
 
 import logo1 from '../assets/associates/Dr.jagjit.webp';
-import logo2 from '../assets/associates/Udo Ziegler.png';
+import logo2 from '../assets/associates/UdoZiegler.png';
 import logo3 from '../assets/associates/SukhpalSingh.webp';
 import logo4 from '../assets/associates/TapanJAin.webp';
 import logo5 from '../assets/associates/AmitJoshi.png';
 import logo6 from '../assets/associates/JMPaul.png';
-import logo7 from '../assets/associates/Pankaj.webp';
+import logo7 from '../assets/associates/Pankaj.png';
 import logo8 from '../assets/associates/NeerjaShonek.png';
-import logo9 from '../assets/associates/JMPaul.webp';
+import logo9 from '../assets/associates/MichaelKost.png';
 import logo10 from '../assets/associates/Craig.png';
+import logo11 from '../assets/associates/Oshada.png';
+import logo12 from '../assets/associates/HarjeetSingh.png'
 
 const companies = [
   { name: "Company A", url:comp1 },
@@ -85,8 +87,26 @@ const associates = [
    { 
     name: 'Neerja Shonek', 
     logo: logo8,
-    post: 'The Data Center Man',
-    description: 'A Senior Data Centre Expert with 30+ years across EMEA and APAC, and a strong Middle East presence since 2008. He specialises in sustainable, scalable solutions from site selection to MEP/IT systems and full lifecycle management, championing net-zero operations and AI-driven cooling'
+    post: 'Market Expert',
+    description: 'Neerja Shonek has spent over 30 years growing business for global names such as Xerox, Citibank and Microsoft. Keenly passionate about the environment and sustainable technologies, she brings decades of experience in B2B sales to the table.'
+  },
+   { 
+    name: 'Michael Kost', 
+    logo: logo9,
+    post: 'The Cooling Man',
+    description: 'With 20+ years in cooling tower technology, holds a Mechanical Engineering degree and a Master in Technical Management (CCI). He developed oil coolers for the Middle East and led international sales at Gohl, Jacir, and KTK, managing projects across Europe, Russia, Asia, the Middle East, and Africa.'
+  },
+  { 
+    name: 'Oshada Samarajeewa', 
+    logo: logo11,
+    post: 'Sri Lanka Marketing',
+    description: 'OMEGO Holdings and THA Holdings, owned by Oshada Samarajeewa in Sri Lanka, focus on global import, export, and procurement with strong China ties. Supported by a Shenzhen warehouse, they deliver diverse products, direct imports, and tailored solutions, ensuring quality, efficiency, and cost-effectiveness for clients worldwide.'
+  },
+  { 
+    name: 'Harjeet Singh', 
+    logo: logo12,
+    post: 'Thermal Power Plants',
+    description: 'With 36+ years in the power sector, served as General Manager at NTPC. He specializes in erection, commissioning, and maintenance of control systems for Thermal and Combined Cycle Gas Power Plants. His expertise spans all phases of operations, ensuring efficiency and reliability across plant lifecycles.'
   },
 ];
 
