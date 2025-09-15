@@ -15,7 +15,7 @@ import './Gallery.css'; // Import the new CSS file
 import logo1 from '../assets/associates/Dr.jagjit.webp';
 import logo2 from '../assets/associates/UdoZiegler.png';
 import logo3 from '../assets/associates/SukhpalSingh.webp';
-import logo4 from '../assets/associates/TapanJAin.webp';
+import logo4 from '../assets/associates/Tapan.png';
 import logo5 from '../assets/associates/AmitJoshi.png';
 import logo6 from '../assets/associates/JMPaul.png';
 import logo7 from '../assets/associates/Pankaj.png';
@@ -24,6 +24,7 @@ import logo9 from '../assets/associates/MichaelKost.png';
 import logo10 from '../assets/associates/Craig.png';
 import logo11 from '../assets/associates/Oshada.png';
 import logo12 from '../assets/associates/HarjeetSingh.png'
+import logo13 from '../assets/associates/TapashPradhan.png'
 
 const companies = [
   { name: "Company A", url:comp1 },
@@ -88,7 +89,7 @@ const associates = [
     name: 'Neerja Shonek', 
     logo: logo8,
     post: 'Market Expert',
-    description: 'Neerja Shonek has spent over 30 years growing business for global names such as Xerox, Citibank and Microsoft. Keenly passionate about the environment and sustainable technologies, she brings decades of experience in B2B sales to the table.'
+    description: 'With 30+ years of experience at Xerox, Citibank, and Microsoft, excels in B2B sales, partnerships, and market expansion. Passionate about sustainability, she drives growth, fosters innovation, and builds long-term value through responsible, and strategic leadership.'
   },
    { 
     name: 'Michael Kost', 
@@ -100,7 +101,7 @@ const associates = [
     name: 'Oshada Samarajeewa', 
     logo: logo11,
     post: 'Sri Lanka Marketing',
-    description: 'OMEGO Holdings and THA Holdings, owned by Oshada Samarajeewa in Sri Lanka, focus on global import, export, and procurement with strong China ties. Supported by a Shenzhen warehouse, they deliver diverse products, direct imports, and tailored solutions, ensuring quality, efficiency, and cost-effectiveness for clients worldwide.'
+    description: 'OMEGO & THA Holdings, led by Oshada Samarajeewa in Sri Lanka, specialize in global import, export, and procurement with strong China ties. Backed by a Shenzhen warehouse, they provide  products and tailored solutions, ensuring quality and cost-effective services worldwide.'
   },
   { 
     name: 'Harjeet Singh', 
@@ -108,6 +109,13 @@ const associates = [
     post: 'Thermal Power Plants',
     description: 'With 36+ years in the power sector, served as General Manager at NTPC. He specializes in erection, commissioning, and maintenance of control systems for Thermal and Combined Cycle Gas Power Plants. His expertise spans all phases of operations, ensuring efficiency and reliability across plant lifecycles.'
   },
+   { 
+    name: 'Tapash Pradhan', 
+    logo: logo13,
+    post: 'The Man of Steel',
+    description: 'With 22+ years in the steel and sponge iron industry, he is an expert in DRI plants, SMS, and slag units. Known for leadership and process optimization, he drives efficiency, safety, compliance, innovation, and sustainable, cost-effective excellence in integrated steel operations.'
+  },
+
 ];
 
 const Gallery = () => {
