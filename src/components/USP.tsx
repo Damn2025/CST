@@ -108,11 +108,11 @@ const USPSection: React.FC = () => {
         </div>
 
         {/* Desktop Horizontal Accordion */}
-        <div className="hidden lg:flex flex-row bg-[#111314] rounded-[35px] overflow-hidden min-h-[65vh]">
+        <div className="hidden lg:flex flex-row bg-[#111314] rounded-[35px] overflow-hidden h-[65vh]">
           {cardsData.map((module, index) => (
             <div
               key={module.id}
-              className={`flex transition-all duration-700 ease-in-out ${
+                className={`flex transition-all duration-700 ease-in-out ${
                 activeModule === index ? 'flex-[12]' : 'flex-[1] cursor-pointer'
               }`}
               onClick={() => setActiveModule(index)}
@@ -120,7 +120,7 @@ const USPSection: React.FC = () => {
               {activeModule === index ? (
                 <div
                   className={`${module.color.bg}  p-10 flex-1 flex flex-col justify-center`}
-                >
+                > 
                   <div className="inline-flex items-center gap-3 mb-4">
                     <div className="bg-white/20 text-white w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                       <module.icon className="w-6 h-6" />
@@ -132,7 +132,7 @@ const USPSection: React.FC = () => {
                   <h3 className="text-2xl md:text-3xl font-bold text-white my-2">
                         {module.title}
                       </h3>
-                  <div className="flex flex-row items-center gap-8">
+                  <div className="flex flex-row items-center gap-8 overflow-hidden">
                     <div className="flex-1">
                         <p className="text-white mt-5 italic leading-relaxed">
                     {module.description}
@@ -161,6 +161,8 @@ const USPSection: React.FC = () => {
                   `}
                 >
                   <span className=" transform -rotate-90 whitespace-nowrap font font-bold text-xl sm:text-large">
+
+                    
                      {module.shortTitle} 
                   </span>
                 </div>

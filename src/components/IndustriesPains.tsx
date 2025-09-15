@@ -190,7 +190,6 @@ const painPointsData = [
 
 const IndustriesPain = () => {
   const scrollContainerRef = useRef(null);
-  const [flippedCardId, setFlippedCardId] = useState<number | null>(null); // Changed state to a single ID
   const cardWidth = 320 + 24; // w-80 (sm:w-80) is 320px, space-x-6 is 24px. We'll use the larger size for scroll calculation.
 
   const scrollLeft = () => {
@@ -211,11 +210,6 @@ const IndustriesPain = () => {
     }
   };
 
-  const handleCardClick = (id: number) => {
-    // If the same card is clicked, flip it back. Otherwise, flip the new card.
-    setFlippedCardId(flippedCardId === id ? null : id);
-  };
-
   return (
     <div className="bg-white flex items-center justify-center py-20 overflow-hidden">
       <style>{`
@@ -227,6 +221,9 @@ const IndustriesPain = () => {
         .hide-scrollbar::-webkit-scrollbar {
           display: none;
         }
+        .card-contain {
+          perspective: 1000px;
+        }
         .card-inner {
           position: relative;
           width: 100%;
@@ -235,13 +232,15 @@ const IndustriesPain = () => {
           transition: transform 0.6s;
           transform-style: preserve-3d;
         }
-        .card-container:hover .card-inner {
-          transform: rotateY(180deg);
-        }
+        .card-contain:hover .card-inner {
+          transform: rotateY(180deg) scale(1.05);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        } 
         .card-front, .card-back {
           position: absolute;
           width: 100%;
           height: 100%;
+          -webkit-backface-visibility: hidden; /* Safari */
           backface-visibility: hidden;
           display: flex;
           flex-direction: column;
@@ -290,13 +289,9 @@ const IndustriesPain = () => {
             {painPointsData.map(card => (
               <div 
                 key={card.id}
-                onClick={() => handleCardClick(card.id)}
-                className="flex-none w-72 h-96 sm:w-80 sm:h-[26rem] snap-center  rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105 cursor-pointer perspective-1000"
+                className="card-contain flex-none w-72 h-96 sm:w-80 sm:h-[26rem] snap-center rounded-lg shadow-lg transform transition-all duration-300 cursor-pointer"
               >
-                <div 
-                  className="card-inner"
-                  style={{ transform: flippedCardId === card.id ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
-                >
+                <div className="card-inner">
                   {/* Card Front */}
                   <div className={`card-front ${card.color.front}`}>
                     <img 

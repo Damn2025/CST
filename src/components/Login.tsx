@@ -67,14 +67,14 @@ const Login: React.FC<LoginProps> = ({ onContactClick }) => {
                 <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </form>
-            <div className="flex items-center my-4">
+            {/* <div className="flex items-center my-4">
               <div className="flex-grow border-t border-gray-300"></div>
               <span className="flex-shrink mx-4 text-gray-500 text-sm">OR</span>
               <div className="flex-grow border-t border-gray-300"></div>
             </div>
             <p className="text-sm text-gray-600 text-center">
-              Don't have an account? <a href="/signup" className="font-semibold text-blue-600 hover:text-blue-700 hover:underline">Sign Up</a>
-            </p>
+              Don't have an account? <a href="" onClick={() => navigate('/signup')} className="font-semibold text-blue-600 hover:text-blue-700 hover:underline">Sign Up</a>
+            </p> */}
           </div>
 
            

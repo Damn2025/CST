@@ -12,7 +12,7 @@ import './Gallery.css'; // Import the new CSS file
 
 // You can replace these with your actual logo imports
 
-import logo1 from '../assets/associates/Dr.jagjit.webp';
+import logo1 from '../assets/associates/Dr_Jagjit.png';
 import logo2 from '../assets/associates/UdoZiegler.png';
 import logo3 from '../assets/associates/SukhpalSingh.webp';
 import logo4 from '../assets/associates/Tapan.png';
@@ -25,6 +25,7 @@ import logo10 from '../assets/associates/Craig.png';
 import logo11 from '../assets/associates/Oshada.png';
 import logo12 from '../assets/associates/HarjeetSingh.png'
 import logo13 from '../assets/associates/TapashPradhan.png'
+import logo14 from '../assets/associates/Amitoj1.png'
 
 const companies = [
   { name: "Company A", url:comp1 },
@@ -112,6 +113,12 @@ const associates = [
    { 
     name: 'Tapash Pradhan', 
     logo: logo13,
+    post: 'The Man of Steel',
+    description: 'With 22+ years in the steel and sponge iron industry, he is an expert in DRI plants, SMS, and slag units. Known for leadership and process optimization, he drives efficiency, safety, compliance, innovation, and sustainable, cost-effective excellence in integrated steel operations.'
+  },
+  { 
+    name: 'Amitoj Singh', 
+    logo: logo14,
     post: 'The Man of Steel',
     description: 'With 22+ years in the steel and sponge iron industry, he is an expert in DRI plants, SMS, and slag units. Known for leadership and process optimization, he drives efficiency, safety, compliance, innovation, and sustainable, cost-effective excellence in integrated steel operations.'
   },
