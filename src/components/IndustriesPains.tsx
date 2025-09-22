@@ -4,6 +4,7 @@ import USP2 from '../assets/USP/USP2.jpg'
 import USP3 from '../assets/USP/USP3.png'
 import USP4 from '../assets/USP/USP4.png'
 import USP5 from '../assets/USP/USP5.jpg'
+import Pain6 from '../assets/Pains/pain6.png'
 import { SlidersHorizontal, Users, FileText, Cpu, Puzzle, Award, Droplets, Lightbulb, Clock, ChevronDown, BookOpen } from 'lucide-react';
 
 
@@ -175,7 +176,7 @@ const painPointsData = [
       front: 'bg-orange-400',
       back: 'bg-orange-200'
     },
-    image:USP1,
+    image:Pain6,
     icon: Award,
     points: [
       "Over 25 years of certification support experience.",

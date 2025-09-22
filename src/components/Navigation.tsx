@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.webp'
+import logo from '../assets/logo.png';
 
 interface NavigationProps {
   onContactClick: () => void;
@@ -47,17 +47,9 @@ const Navigation: React.FC<NavigationProps> = ({ onContactClick }) => {
           {/* Logo */}
           <div className="flex items-center gap-2 sm:gap-4 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
            <a href='/'>
-            <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-16 md:h-20'}`} />
+            <img src={logo} alt="CST Envirotech Logo" className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-16' : 'h-20 md:h-20'}`} />
             </a>
-            <div className="flex flex-col items-start justify-center sm:pt-[24px]">
-              <div>
-                <span className={`font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500 transition-all duration-300 ${isScrolled ? 'text-xl' : 'text-2xl sm:text-xl md:xl'}`}>
-                  <span className="font-extrabold">T</span>HERMO<span className="font-extrabold italic">Soft</span>
-                </span>
-             </div>
-              <div className={`border w-[70%] ${isScrolled ? 'border-blue-500' : 'border-white'}`}></div>
-              <h3 className={`font-cursive font-bold transition-colors duration-300 ${isScrolled ? 'text-black text-xl sm:text-2xl' : 'text-white text-2xl sm:text-3xl'}`}>Heat Transfer Software</h3>
-            </div>
+            
           </div>
 
           {/* Desktop Navigation */}

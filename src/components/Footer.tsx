@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Linkedin, Twitter } from 'lucide-react';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo.png';
 
 interface FooterProps {
   onContactClick: () => void;

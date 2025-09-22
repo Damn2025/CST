@@ -60,7 +60,7 @@ const BackgroundAnimation: React.FC = () => {
       particles.forEach(particle => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(39, 79, 113, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(65, 105, 225, ${particle.opacity})`;
         ctx.fill();
       });
 
@@ -75,7 +75,7 @@ const BackgroundAnimation: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
-            ctx.strokeStyle = `rgba(39, 79, 113, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = `rgba(65, 105, 225, ${0.1 * (1 - distance / 100)})`;
             ctx.stroke();
           }
         });
@@ -106,7 +106,7 @@ const BackgroundAnimation: React.FC = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 "
+      className="fixed inset-0 pointer-events-none z-0"
       style={{ opacity: 0.8 }}
     />
   );

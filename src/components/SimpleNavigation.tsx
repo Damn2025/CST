@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.webp';
+import logo from '../assets/logo.png';
 import { Menu, X } from 'lucide-react';
 
 interface SimpleNavigationProps {
