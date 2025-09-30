@@ -14,15 +14,6 @@ const Footer: React.FC<FooterProps> = ({ onContactClick }) => {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <img src={logo} alt="CST Logo" className="h-16" />
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-pink-500 via-orange-500 to-blue-500">
-                  <span className="font-extrabold">T</span>HERMO<span className="font-extrabold italic">Soft</span>
-                </span>
-                <div className="border-t border-white w-3/4 my-1"></div>
-                <h3 className="font-cursive font-bold text-white text-lg">
-                  Heat Transfer Software
-                </h3>
-              </div>
             </div>
             <p className="text-gray-400 leading-relaxed">
                An experienced, independent, and unique software house capable of complementing our programming and AI skills with strong, dedicated thermal engineering experts.
